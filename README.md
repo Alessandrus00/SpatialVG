@@ -1,1 +1,1 @@
-# SpatialVG
+## GitHub repo for the master thesis in Computer Science of Alessandro Resta, A.Y. 2023/2024, University of Padua. The code and data will be released after the successful defence of the master thesis.
