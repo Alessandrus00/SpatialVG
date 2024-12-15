@@ -1,4 +1,3 @@
-<br />
 <p align="center">
   <h1 align="center">Exploring the Role of Spatial Relations in Visual Grounding: A Novel Benchmark and Synthetic Pretraining </h1>
   <h3 align="center">Benchmarking spatial reasoning in visual grounding.</h3>
