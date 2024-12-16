@@ -50,7 +50,7 @@ cd TransVG++/TransVG/ln_data
 mkdir MSCOCO2017
 ```
 4. Put all the images present in the train and validation splits of MSCOCO 2017 inside the new folder ``MSCOCO2017``. You can download them [here](https://cocodataset.org/#download).
-5. Add the following entry to the dictionary called ``SUPPORTED_DATASETS`` inside the file ``TransVG++/TrnasVG/datasets/data_loader.py``:
+5. Add the following entry to the dictionary called ``SUPPORTED_DATASETS`` inside the file ``TransVG++/TransVG/datasets/data_loader.py``:
 ```python
 'mscoco':{
     'splits': ('spatialvg-all','spatialvg-left','spatialvg-right','spatialvg-front','spatialvg-behind','spatialvg-on','spatialvg-under','spatialvg-next','spatialvg-above'),
@@ -90,7 +90,7 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env --master_port 47
     --reg_out_type reg_token \
     --language_modulation cross_attn \
     --without_visual_mask \
-    --eval_model outputs/refcoco_tiny
+    --eval_model outputs/transvg++_refcoco_vit_tiny
 ```
 
 For VLTVG the procedure is similar. The only difference is the naming of the folders. The content of ``SpatialVG/VG format`` must be put inside ``VLTVG/split/data/mscoco`` and the ``MSCOCO2017`` inside ``VLTVG/data``. The additions of point number 5 and 6 must be done inside the file ``VLTVG/datasets/dataset.py``.
@@ -101,7 +101,7 @@ cd VLTVG
 python -m torch.distributed.launch --nproc_per_node=1 --use_env \
     test.py \
     --config configs/VLTVG_R50_unc.py \
-    --checkpoint work_dirs/refcoco_r50/checkpoint_best_acc.pth \
+    --checkpoint work_dirs/vltvg_refcoco_r50/checkpoint_best_acc.pth \
     --batch_size_test 16 \
     --dataset mscoco \
     --test_split spatialvg-all \
